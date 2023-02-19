@@ -15,9 +15,14 @@ namespace OrderManger.DbContexts
         public string Name { get; private set; }
         private static object syncRoot = new Object();
 
-        private OrderManagerDbContext()
-        {
+        private OrderManagerDbContext() {  }
 
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Paper> Papers { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=ordermanager.db");
         }
 
         public static OrderManagerDbContext getInstance()
@@ -31,17 +36,6 @@ namespace OrderManger.DbContexts
                 }
             }
             return instance;
-        }
-
-
-
-
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Paper> Papers { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlite("Data Source=ordermanager.db");
         }
     }
 }

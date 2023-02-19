@@ -15,14 +15,11 @@ namespace OrderManger.ViewModels
 {
     public class UserViewModel
     {
-        OrderManagerDbContext db = OrderManagerDbContext.getInstance();
+        public OrderManagerDbContext db = OrderManagerDbContext.getInstance();
         public RelayCommand? addCommand;
         public RelayCommand? editCommand;
         public RelayCommand? deleteCommand;
         public ObservableCollection<User> Users { get; set; }
-
-
-
 
         public UserViewModel()
         {
@@ -48,9 +45,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
-
-
         public RelayCommand DeleteCommand
         {
             get
@@ -72,6 +66,5 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
     }
 }

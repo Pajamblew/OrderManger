@@ -13,10 +13,7 @@ namespace OrderManger.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public int orderCount { get; set; } = 0;
-        public User()
-        {
-
-        }
+        public User() { }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

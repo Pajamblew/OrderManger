@@ -15,7 +15,7 @@ namespace OrderManger.ViewModels
 {
     public class PaperViewModel
     {
-        OrderManagerDbContext db = OrderManagerDbContext.getInstance();
+        public OrderManagerDbContext db = OrderManagerDbContext.getInstance();
         public RelayCommand? addCommand;
         public RelayCommand? editCommand;
         public RelayCommand? deleteCommand;
@@ -45,9 +45,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
-
-
         public RelayCommand DeleteCommand
         {
             get

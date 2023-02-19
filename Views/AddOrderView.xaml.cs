@@ -22,6 +22,7 @@ namespace OrderManger.Views
     public partial class AddOrderView : Window
     {
         public Order Order { get; private set; }
+
         public AddOrderView(Order order)
         {
             InitializeComponent();

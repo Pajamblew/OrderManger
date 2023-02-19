@@ -14,10 +14,7 @@ namespace OrderManger.Models
         public string PaperType { get; set; }
         public int orderCount { get; set; } = 0;
 
-        public Paper()
-        {
-
-        }
+        public Paper() {  }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")

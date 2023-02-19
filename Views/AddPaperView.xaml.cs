@@ -21,6 +21,7 @@ namespace OrderManger.Views
     public partial class AddPaperView : Window
     {
         public Paper Paper { get; private set; }
+
         public AddPaperView(Paper paper)
         {
             InitializeComponent();

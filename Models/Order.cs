@@ -10,13 +10,14 @@ namespace OrderManger.Models
 {
     public class Order : INotifyPropertyChanged
     {
-
         private User _user;
         private Paper _paper;
         private string _paperSize;
         private int _paperAmount;
         private DateTime _orderDate = DateTime.Now;
+
         public int Id { get; set; }
+
         public User User
         {
             get { return _user; }
@@ -35,7 +36,6 @@ namespace OrderManger.Models
                 OnPropertyChanged(nameof(Paper));
             }
         }
-
         public int PaperAmount
         {
             get { return _paperAmount; }
@@ -64,10 +64,7 @@ namespace OrderManger.Models
             }
         }
 
-        public Order()
-        {
-
-        }
+        public Order() {  }
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -76,7 +73,5 @@ namespace OrderManger.Models
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
         }
-
-
     }
 }

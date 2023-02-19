@@ -15,15 +15,14 @@ namespace OrderManger.ViewModels
     public class OrderViewModel
     {
         private readonly string[] PAPER_SIZES = { "A0", "A1", "A2", "A3", "A4", "A5" };
-        OrderManagerDbContext db = OrderManagerDbContext.getInstance();
+
+        public OrderManagerDbContext db = OrderManagerDbContext.getInstance();
         public RelayCommand? userCommand;
         public RelayCommand? paperCommand;
         public RelayCommand? addCommand;
         public RelayCommand? editCommand;
         public RelayCommand? deleteCommand;
         public ObservableCollection<Order> Orders { get; set; }
-
-
 
         public OrderViewModel()
         {
@@ -50,7 +49,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
         public RelayCommand PaperCommand
         {
             get
@@ -68,7 +66,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
         public RelayCommand AddCommand
         {
             get
@@ -98,7 +95,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
         public RelayCommand EditCommand
         {
             get
@@ -136,7 +132,6 @@ namespace OrderManger.ViewModels
                     }));
             }
         }
-
         public RelayCommand DeleteCommand
         {
             get

@@ -21,6 +21,7 @@ namespace OrderManger.Views
     public partial class AddUserView : Window
     {
         public User User { get; private set; }
+
         public AddUserView(User user)
         {
             InitializeComponent();
