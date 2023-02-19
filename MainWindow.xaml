@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrderManger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="400" Width="400">
+        Title="MainWindow" Height="400" Width="450">
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="MinWidth" Value="60" />
+            <Setter Property="MinWidth" Value="20" />
             <Setter Property="Margin" Value="8" />
         </Style>
     </Window.Resources>
@@ -91,9 +91,9 @@
 
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Content="User" Margin="10" Padding="3" Command="{Binding UserCommand}"  />
-            <Button Content="Paper" Margin="10" Padding="3" Command="{Binding PaperCommand}"  />
-            <Button Content="Добавить" Margin="10" Padding="3" Command="{Binding AddCommand}"  />
+            <Button Content="Manager Menu" Margin="10" Padding="1" Command="{Binding UserCommand}"  />
+            <Button Content="Paper Menu" Margin="10" Padding="1" Command="{Binding PaperCommand}"  />
+            <Button Content="Добавить" Margin="10" Padding="1" Command="{Binding AddCommand}"  />
             <Button Content="Изменить" Margin="10" Command="{Binding EditCommand}"
                     CommandParameter="{Binding ElementName=ordersList, Path=SelectedItem}"  />
             <Button Content="Удалить" Margin="10" Command="{Binding DeleteCommand}"
