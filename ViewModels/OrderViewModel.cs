@@ -86,8 +86,7 @@ namespace OrderManger.ViewModels
                             order.User = addOrderView.usersComboBox.SelectedItem as User;
                             order.Paper = addOrderView.papersComboBox.SelectedItem as Paper;
 
-                            order.User.orderCount++;
-                            order.Paper.orderCount++;
+                            AddOrderToUserAndPaper(order);
 
                             db.Orders.Add(order);
                             db.SaveChanges();
@@ -143,13 +142,22 @@ namespace OrderManger.ViewModels
 
                         if (order == null) return;
 
-                        order.User.orderCount--;
-                        order.Paper.orderCount--;
+                        DeleteOrderFromUserAndPaper(order);
 
                         db.Orders.Remove(order);
                         db.SaveChanges();
                     }));
             }
+        }
+        private void AddOrderToUserAndPaper(Order order)
+        {
+            order.User.orderCount++;
+            order.Paper.orderCount++;
+        }
+        private void DeleteOrderFromUserAndPaper(Order order)
+        {
+            order.User.orderCount--;
+            order.Paper.orderCount--;
         }
     }
 }
