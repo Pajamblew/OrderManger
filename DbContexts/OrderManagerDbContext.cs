@@ -22,7 +22,7 @@ namespace OrderManger.DbContexts
         public DbSet<Paper> Papers { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=ordermanager.db");
+            optionsBuilder.UseSqlite("Data Source=ordermanager.db");
             
         }
 
