@@ -26,7 +26,7 @@ namespace OrderManger.ViewModels
 
         public OrderViewModel()
         {
-            db.Database.EnsureCreated();
+            
             db.Users.Load();
             db.Papers.Load();
             db.Orders.Load();
@@ -141,10 +141,10 @@ namespace OrderManger.ViewModels
                     {
                         Order? order = selectedItem as Order;
 
+                        if (order == null) return;
+
                         order.User.orderCount--;
                         order.Paper.orderCount--;
-
-                        if (order == null) return;
 
                         db.Orders.Remove(order);
                         db.SaveChanges();

@@ -1,4 +1,5 @@
-﻿using OrderManger.ViewModels;
+﻿using OrderManger.DbContexts;
+using OrderManger.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,12 @@ namespace OrderManger
     /// </summary>
     public partial class MainWindow : Window
     {
+        private OrderManagerDbContext db = OrderManagerDbContext.getInstance();
         public MainWindow()
         {
             InitializeComponent();
 
+            db.Database.EnsureCreated();
             DataContext = new OrderViewModel();
         }
     }
